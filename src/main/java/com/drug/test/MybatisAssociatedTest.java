@@ -19,6 +19,7 @@ public class MybatisAssociatedTest {
 				+ "PersonMapper.findPersonById", 1);
 		System.out.println(person);
 		System.out.println("哈哈哈哈哈");
+		System.out.println("yyyyyyyy");
 		session.close();
 	}
 	@Test
