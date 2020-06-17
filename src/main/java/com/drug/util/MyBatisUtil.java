@@ -1,4 +1,4 @@
-package com.itheima.util;
+package com.drug.util;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package com.itheima.po;
+package com.drug.po;
 /**
  * 证件持久化类
  * @author 13069

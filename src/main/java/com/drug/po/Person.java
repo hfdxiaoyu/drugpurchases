@@ -1,4 +1,4 @@
-package com.itheima.po;
+package com.drug.po;
 
 public class Person {
 	private Integer id;

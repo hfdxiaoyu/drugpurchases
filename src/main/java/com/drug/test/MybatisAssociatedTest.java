@@ -1,4 +1,4 @@
-package com.itheima.test;
+package com.drug.test;
 /**
  * MyBatis关联查询测试类
  * @author 13069
@@ -8,8 +8,8 @@ package com.itheima.test;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
-import com.itheima.po.Person;
-import com.itheima.util.MyBatisUtil;
+import com.drug.po.Person;
+import com.drug.util.MyBatisUtil;
 
 public class MybatisAssociatedTest {
 	@Test
