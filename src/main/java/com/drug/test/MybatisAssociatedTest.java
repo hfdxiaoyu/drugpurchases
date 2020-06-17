@@ -18,6 +18,7 @@ public class MybatisAssociatedTest {
 		Person person = session.selectOne("com.itheima.mapper."
 				+ "PersonMapper.findPersonById", 1);
 		System.out.println(person);
+		System.out.println("哈哈哈哈哈");
 		session.close();
 	}
 	@Test
