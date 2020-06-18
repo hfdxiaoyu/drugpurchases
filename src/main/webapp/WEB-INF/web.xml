@@ -10,16 +10,15 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-  	<servlet-name>hnkjxy</servlet-name>
-  	<!-- 前端控制器   也叫中央处理器或者中央控制器 -->
-  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  	<init-param>
-  		<param-name>contextConfigLocation</param-name>
-  		<param-value>classpath:config/springmvc-config.xml</param-value>
-  	</init-param>
+    <servlet-name>hnkjxy</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:config/springmvc-config.xml</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>hnkjxy</servlet-name>
-  	<url-pattern>/</url-pattern>
+    <servlet-name>hnkjxy</servlet-name>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>
