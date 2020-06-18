@@ -20,6 +20,7 @@ public class MybatisAssociatedTest {
 		System.out.println(person);
 		System.out.println("哈哈哈哈哈");
 		System.out.println("ooooookkkkkkkk");
+		System.out.println("拉卡玛卡");
 		session.close();
 	}
 	@Test
