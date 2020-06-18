@@ -1,4 +1,4 @@
-package com.drug.service.impl;
+package com.drug.service;
 
 public class test1 {
 
