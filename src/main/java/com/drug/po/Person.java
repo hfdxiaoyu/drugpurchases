@@ -1,44 +1,57 @@
 package com.drug.po;
-
+/**
+ * 人员表
+ * @author 13069
+ *
+ */
 public class Person {
-	private Integer id;
-	private String name;
-	private Integer age;
-	private String sex;
-	private IdCard card; //个人关联的证件
-	public Integer getId() {
-		return id;
+	private int perid;//账号
+	private String perpassword;//密码
+	private String pername;//名字
+	private String perphon;//电话号码
+	private String peraddr;//地址
+	private int pertype; //账号类型（1管理员，0普通账户）
+	
+	public int getPerid() {
+		return perid;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setPerid(int perid) {
+		this.perid = perid;
 	}
-	public String getName() {
-		return name;
+	public String getPerpassword() {
+		return perpassword;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setPerpassword(String perpassword) {
+		this.perpassword = perpassword;
 	}
-	public Integer getAge() {
-		return age;
+	public String getPername() {
+		return pername;
 	}
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setPername(String pername) {
+		this.pername = pername;
 	}
-	public String getSex() {
-		return sex;
+	public String getPerphon() {
+		return perphon;
 	}
-	public void setSex(String sex) {
-		this.sex = sex;
+	public void setPerphon(String perphon) {
+		this.perphon = perphon;
 	}
-	public IdCard getCard() {
-		return card;
+	public String getPeraddr() {
+		return peraddr;
 	}
-	public void setCard(IdCard card) {
-		this.card = card;
+	public void setPeraddr(String peraddr) {
+		this.peraddr = peraddr;
+	}
+	public int getPertype() {
+		return pertype;
+	}
+	public void setPertype(int pertype) {
+		this.pertype = pertype;
 	}
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", age=" + age + ", sex=" + sex + ", card=" + card + "]";
+		return "Person [perid=" + perid + ", perpassword=" + perpassword + ", pername=" + pername + ", perphon="
+				+ perphon + ", peraddr=" + peraddr + ", pertype=" + pertype + "]";
 	}
 	
 	
