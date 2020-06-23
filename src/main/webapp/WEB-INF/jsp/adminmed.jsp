@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>管理员</title>
+    <title>药品管理</title>
     <meta http-equiv=Content-Type content="text/html; charset=utf-8">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -23,6 +23,11 @@
     <link href="css/boot-crm.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+	<!--
+    	作者：1306933520@qq.com
+    	时间：2020-06-23
+    	描述：药品管理管理员页面
+    -->
 <div id="wrapper">
     <!-- 导航栏部分 -->
     <nav class="navbar navbar-default navbar-static-top" role="navigation"
@@ -84,8 +89,8 @@
                     </li>
                 </ul>
             </li>
+            <!-- 任务通知 end -->
             
-            <!-- 消息通知 end -->
             <!-- 用户信息和系统设置 start -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -152,7 +157,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header"><b><font size="8" color="green">人员管理</font></b></h1>
+                <h1 class="page-header"><b><font size="8" color="green">药品管理</font></b></h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -160,9 +165,9 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <form class="form-inline" method="post"
-                      action="#">
+                      action="${pageContext.request.contextPath }/employee/list.action">
                     <div class="form-group">
-                        <label for="name">人名</label>
+                        <label for="name">药品名</label>
                         <input type="text" class="form-control" id="name"
                                value="" name="name"/>
                     </div>
@@ -191,12 +196,16 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th>id</th>
-                            <th>密码</th>
+                            <th>编号</th>
                             <th>名字</th>
-                            <th>电话</th>
-                            <th>地址</th>
-                            
+                            <th>剂量</th>
+                            <th>单价</th>
+                            <th>生产企业</th>
+                            <th>生产日期</th>
+                            <th>保质期</th>
+                            <th>采购人员</th>
+                            <th>采购订单</th>
+                            <th>是否使用</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -207,7 +216,11 @@
                                 <td align="center"></td>
                                 <td align="center"></td>
                                 <td align="center"></td>
-                                
+                                <td align="center"></td>
+                                <td align="center"></td>
+                                <td align="center"></td>
+                                <td align="center"></td>
+                                <td align="center"></td> 
                                 <td align="center">
                                     <a href="#" class="btn btn-primary btn-xs" data-toggle="modal"
                                        data-target="#editDialog" onclick="edit(${row.id})">修改</a>

@@ -10,7 +10,7 @@
         
         <!-- 指定需要扫描的包 -->
         <context:component-scan base-package="com.drug.controller"/>
-        
+        <bean name="/DrugPeController" class="com.drug.controller.DrugPeController"/>
         
         
        </beans>
