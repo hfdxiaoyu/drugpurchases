@@ -15,6 +15,7 @@ public class Medicin {
 	private int medval;//有效期
 	private Person persons;//关联人员表
 	private Purchase purchases;//关联采购表
+	private int meduse;//使用状态（0使用，1未使用）
 	public int getMedid() {
 		return medid;
 	}
@@ -69,12 +70,19 @@ public class Medicin {
 	public void setPurchases(Purchase purchases) {
 		this.purchases = purchases;
 	}
+	public int getMeduse() {
+		return meduse;
+	}
+	public void setMeduse(int meduse) {
+		this.meduse = meduse;
+	}
 	@Override
 	public String toString() {
 		return "Medicin [medid=" + medid + ", medname=" + medname + ", medspe=" + medspe + ", medprince=" + medprince
 				+ ", medpro=" + medpro + ", medsdata=" + medsdata + ", medval=" + medval + ", persons=" + persons
-				+ ", purchases=" + purchases + "]";
+				+ ", purchases=" + purchases + ", meduse=" + meduse + "]";
 	}
+	
 	
 	
 }

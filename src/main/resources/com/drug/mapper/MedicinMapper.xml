@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.drug.mapper.MedicinMapper" >
+	<!-- 根据id获取人员信息 -->
+	<select id="findPersonById1" parameterType="int" resultType="com.drug.po.Medicin" resultMap="IdCardWithPersonResult">
+		select * from drug_medicine where medicine_id=#{id}
+	</select>
+	<resultMap type="Medicin" id="IdCardWithPersonResult">
+		<id property="medid" column="medicine_id"/>
+		<result property="medname" column="medicine_name"/>
+		<result property="medspe" column="medicine_spe"/>
+		<result property="medprince" column="medicine_prince"/>
+		<result property="medpro" column="medicine_product"/>
+		<result property="medsdata" column="medicine_sdata"/>
+		<result property="medval" column="medicine_validity"/>
+		<result property="persons" column="user_id"/>
+		<result property="purchases" column="pro_id"/>
+		<result property="medsdata" column="user_type"/>
+		<result property="meduse" column="medicine_use"/>
+	</resultMap>
+	
+	<!-- 根据id查询证件信息 -->
+	<!-- <select id="findPersonById" parameterType="Integer"  
+					resultMap="IdCardWithPersonResult">
+		select * from tb_person where id=#{id}
+	</select> -->
+	<!-- <select id="findPersonById2" parameterType="Integer"
+			resultMap="IdCardWithPersonResult2">
+			select * 
+			from drug_user 
+			where user_id=#{id}
+	</select>
+	<resultMap type="Person" id="IdCardWithPersonResult2">
+		<id property="perid" column="user_id"/>
+		<result property="perpassword" column="user_password"/>
+		<result property="pername" column="user_name"/>
+		<result property="perphone" column="user_phone"/>
+		<result property="peraddr" column="user_site"/>
+		<result property="pertype" column="user_type"/>  -->
+		<!-- <association property="card" javaType="IdCard">
+			<id property="id" column="card_id"/>
+			<result property="code" column="code"/>
+		</association> -->
+		
+		<!-- 一对一：association使用select属性引入另外一条sql语句 -->
+		<!-- <association property="card" column="card_id" javaType="IdCard" 
+			select="com.drug.mapper.IdCardMapper.findCodeByid"/> -->
+	<!-- </resultMap> -->
+</mapper>
