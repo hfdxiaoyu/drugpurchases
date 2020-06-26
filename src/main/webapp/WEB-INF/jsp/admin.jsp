@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"
+	+ request.getServerName() + ":" + request.getServerPort() 
+	+ path + "/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -124,7 +131,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="admin.jsp">
+                        <a href="toadmin">
                             <i class="fa fa-edit fa-fw"></i> 人员管理
                         </a>
                     </li>
@@ -208,9 +215,9 @@
                                 <td align="center"></td>
                                 <td align="center"></td>
                                 
-                                <td align="center">
+                              <td align="center">
                                     <a href="#" class="btn btn-primary btn-xs" data-toggle="modal"
-                                       data-target="#editDialog" onclick="edit(${row.id})">修改</a>
+                                     data-target="#editDialog" onclick="edit(${row.id})">修改</a>
                                     <a href="#" class="btn btn-danger btn-xs"
                                        onclick="deleteEmployee(${row.id})">删除</a>
                                 </td>

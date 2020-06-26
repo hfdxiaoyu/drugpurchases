@@ -22,11 +22,16 @@ public class DrugPeController{
 	public String toRegister() {
 		return "admin";
 	}
-@RequestMapping(value="/hello")
+	@RequestMapping("/tobuy")
+	public String toBuy() {
+		return "buy";
+	}
+    @RequestMapping(value="/hello")
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response,Model model) throws Exception {
 		SqlSession sqlSession = MyBatisUtil.getSession();
-		Person person = sqlSession.selectOne("msg", 2);
-		model.addAttribute("msg", "hahahhahaahha");
+		Person person = sqlSession.selectOne("com.drug.mapper."
+				+ "PersonMapper.findPersonbyid",2);
+		model.addAttribute("msg", person);
 		return "admin";
 	}
 

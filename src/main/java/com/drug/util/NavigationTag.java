@@ -26,7 +26,7 @@ public class NavigationTag extends TagSupport {
 		JspWriter writer = pageContext.getOut();
 		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
 		Page page = (Page) request.getAttribute(bean);
-		if (page == null) {
+		if (page == null) 
 			return SKIP_BODY;
 			url = resolveUrl(url, pageContext);
 			try {
@@ -39,6 +39,8 @@ public class NavigationTag extends TagSupport {
 				writer.print("<nav><ul class=\"pagination\">");
 				// 首页链接路径
 				String homeUrl = append(url, "page", pageCount);
+				// 末页链接路径
+				String backUrl = append(url, "page", pageCount);
 				// 显示“上页”按钮
 				if (page.getPage() > 1) {
 					String preUrl = append(url, "page", page.getPage() - 1);
@@ -89,7 +91,7 @@ public class NavigationTag extends TagSupport {
 			}
 			return SKIP_BODY;
 		}
-	}
+	
 
 	private String append(String url, String key, int value) {
 

@@ -2,7 +2,7 @@ package com.drug.service.impl;
 
 import java.util.List;
 
-
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +11,6 @@ import com.drug.dao.MedicinDao;
 import com.drug.po.Medicin;
 import com.drug.service.MedicinService;
 import com.drug.util.Page;
-import com.mysql.cj.util.StringUtils;
 
 /**
  * 药品管理
@@ -30,15 +29,15 @@ public class MedicinServiceImpl implements MedicinService {
 		Medicin medicin = new Medicin();
 
 		// 判断药品名称
-//		if (StringUtils.isNotBlank(medName)) {
-//			medicin.setMedname(medName);
-//		}
+		if (StringUtils.isNotBlank(medName)) {
+			medicin.setMedname(medName);
+		}
 		// 判断药品价格
 ///////////////////////////////////////////////////////
 		// 判断药品生产商
-//		if (StringUtils.isNotBlank(medProduct)) {
-//			medicin.setMedproduct(medProduct);
-//		}
+		if (StringUtils.isNotBlank(medProduct)) {
+			medicin.setMedproduct(medProduct);
+		}
 		// 当前页
 		medicin.setStart((page) - 1 * rows);
 		// 每页数
