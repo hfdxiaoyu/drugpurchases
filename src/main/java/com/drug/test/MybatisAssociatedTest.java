@@ -23,17 +23,6 @@ public class MybatisAssociatedTest {
 		System.out.println(person);
 		session.close();
 	}
-	/**
-	 * 测试数据库连接人员表
-	 */
-	@Test
-	public void findUserByid() {
-		SqlSession session = MyBatisUtil.getSession();
-		Person person = session.selectOne("com.drug.mapper."
-				+ "PersonMapper.findPersonById1", 1);
-		System.out.println(person);
-		session.close();
-	}
 	
 	/**
 	 * 测试新增用户
