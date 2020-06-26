@@ -200,7 +200,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${page.rows}" var="row">
+                        <c:forEach items="${msg}" var="row">
                             <tr>
                                 <td align="center"></td>
                                 <td align="center"></td>
