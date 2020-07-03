@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"
-	+ request.getServerName() + ":" + request.getServerPort() 
-	+ path + "/";
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -136,17 +130,17 @@
                         </a>
                     </li>
                     <li>
-                        <a href="adminmed.jsp">
+                        <a href="toadmin1">
                             <i class="fa fa-dashboard fa-fw"></i> 药品管理
                         </a>
                     </li>
                     <li>
-                        <a href="adminpo.jsp">
+                        <a href="toadmin2">
                             <i class="fa fa-dashboard fa-fw"></i> 采购管理
                         </a>
                     </li>
                     <li>
-                    	<a href="adminsales.jsp">
+                    	<a href="admin3">
                             <i class="fa fa-dashboard fa-fw"></i> 退货管理
                         </a>
                 	</li>
@@ -207,13 +201,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${msg}" var="row">
+                        <%-- <c:forEach items="${person1}" var="row"> --%>
                             <tr>
-                                <td align="center"></td>
-                                <td align="center"></td>
-                                <td align="center"></td>
-                                <td align="center"></td>
-                                <td align="center"></td>
+                                <td align="center">${person1.perid }</td>
+                                <td align="center">${person1.perpassword }</td>
+                                <td align="center">${person1.pername }</td>
+                                <td align="center">${person1.perphon }</td>
+                                <td align="center">${person1.perphon }</td>
                                 
                               <td align="center">
                                     <a href="#" class="btn btn-primary btn-xs" data-toggle="modal"
@@ -222,7 +216,7 @@
                                        onclick="deleteEmployee(${row.id})">删除</a>
                                 </td>
                             </tr>
-                        </c:forEach>
+                        <%-- </c:forEach> --%>
                         </tbody>
                     </table>
                     <div class="col-md-12 text-right">

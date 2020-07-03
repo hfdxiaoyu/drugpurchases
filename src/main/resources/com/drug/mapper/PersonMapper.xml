@@ -8,6 +8,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findPersonbyid" parameterType="int" resultType="com.drug.po.Person" resultMap="IdCardWithPersonResult">
 		select * from drug_user where user_id=#{id}
 	</select>
+	<!-- 分页插件查询  List<Emp> findAll(); 两表连查-->
+     <select id="findAll" resultType="com.drug.po.Person" resultMap="IdCardWithPersonResult">
+		select * from drug_user where user_id=user_id
+	</select>
 	<resultMap type="com.drug.po.Person" id="IdCardWithPersonResult">
 		<id property="perid" column="user_id"/>
 		<result property="perpassword" column="user_password"/>

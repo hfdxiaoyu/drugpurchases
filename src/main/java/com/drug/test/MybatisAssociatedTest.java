@@ -5,6 +5,8 @@ package com.drug.test;
  *
  */
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
@@ -19,8 +21,18 @@ public class MybatisAssociatedTest {
 	public void findUserByid() {
 		SqlSession session = MyBatisUtil.getSession();
 		Person person = session.selectOne("com.drug.mapper."
-				+ "PersonMapper.findPersonbyid",2);
+				+ "PersonMapper.findPersonbyid",1);
 		System.out.println(person);
+		session.close();
+	}
+	
+	@Test
+	public void findUserAll() {
+		SqlSession session = MyBatisUtil.getSession();
+		List<Person> persons = session.selectList("com.drug.mapper.EmpMapper.findAll");
+		for (Person person : persons) {
+			System.out.println(person);
+		}
 		session.close();
 	}
 	

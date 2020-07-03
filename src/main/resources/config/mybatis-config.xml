@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!-- 1、mybatis使用properties来引入外部properties配置文件的内容 resource 引入类路径下资源  url 引入网络路径或磁盘路径下资源 -->
-    
-    <!-- 引入数据库连接的属性文件 -->
-    <properties resource="db.properties"/>
-    
-    <settings>
-    		<setting name="logImpl" value="LOG4J"/>
-    </settings>
-    <typeAliases>
-    	<!-- <package name="com.drug.po.Person" alias="c"/>
-    	<package name="com.drug.po"/> -->
-    </typeAliases>
+	<!-- 1、mybatis使用properties来引入外部properties配置文件的内容 resource 引入类路径下资源 url 引入网络路径或磁盘路径下资源 -->
+
+	<!-- 引入数据库连接的属性文件 -->
+	<properties resource="db.properties" />
+
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+	</settings>
+	<typeAliases>
+		<!-- <package name="com.drug.po.Person" alias="c"/> <package name="com.drug.po"/> -->
+	</typeAliases>
+
+
+	<!-- 分页插件 -->
+	<plugins>
+		<!-- 配置pagehelper分页插件
+		PageHelper4.1.1 -->
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<!-- <property name="dialect" value="mysql" />
+			<property name="offsetAsPageNum" value="false" />
+			<property name="rowBoundsWithCount" value="false" />
+			<property name="pageSizeZero" value="true" />
+			<property name="reasonable" value="false" />
+			<property name="supportMethodsArguments" value="false" />
+			<property name="returnPageInfo" value="none" /> -->
+		</plugin>
+	</plugins>
 	<!-- 环境，可以配置多个，default：指定采用哪个环境 -->
-    <environments default="mysql">
-    	
-        <environment id="mysql">
-            <transactionManager type="JDBC" />
-            <!-- 配置数据库连接信息 -->
-            <dataSource type="POOLED">
-                <property name="driver" value="${driver}" />
-                <property name="url" value="${url}" />
-                <property name="username" value="${username}" />
-                <property name="password" value="${password}" />
-            </dataSource>
-        </environment>
-    </environments>
-    <mappers>
-        <!-- <mapper resource="com/itheima/mapper/IdCardMapper.xml"/> -->
-        <mapper resource="com/drug/mapper/PersonMapper.xml"/>
-    </mappers>
+	<environments default="mysql">
+
+		<environment id="mysql">
+			<transactionManager type="JDBC" />
+			<!-- 配置数据库连接信息 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments> 
+	<mappers>
+		<mapper resource="com/drug/mapper/PersonMapper.xml" />
+		<mapper resource="com/drug/mapper/EmpMapper.xml" />
+	</mappers>
 </configuration>

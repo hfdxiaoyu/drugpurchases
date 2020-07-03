@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.drug.dao.CustomerDao" >
+	<!-- 可以使用 -->
+	<!-- 根据id获取人员信息 -->
+	<select id="findPersonbyid" parameterType="int" resultType="com.drug.po.Person" resultMap="IdCardWithPersonResult">
+		select * from drug_user where user_id=#{id}
+	</select>
+	<resultMap type="com.drug.po.Person" id="IdCardWithPersonResult">
+		<id property="perid" column="user_id"/>
+		<result property="perpassword" column="user_password"/>
+		<result property="pername" column="user_name"/>
+		<result property="perphon" column="user_phone"/>
+		<result property="peraddr" column="user_site"/>
+		<result property="pertype" column="user_type"/>
+	</resultMap>
+	
+	<!-- 添加用户 -->
+	<insert id="addPerson" parameterType="com.drug.po.Person">
+		insert into drug_user(user_password,user_name,user_phone,user_site) 
+		value(#{perpassword},#{pername},#{perphon},#{peraddr})
+	</insert>
+	
+	<!-- 修改用户 -->
+	<update id="updatePerson" parameterType="com.drug.po.Person">
+		update drug_user set 
+		user_password=#{perpassword},user_name=#{pername},user_phone=#{perphon},user_site=#{peraddr} 
+		where user_id=#{perid}
+	</update>
+	
+	<!-- 删除用户 -->
+	<delete id="deletebyid" parameterType="integer">
+		delete from drug_user where user_id=#{id}
+	</delete>
+	
+</mapper>

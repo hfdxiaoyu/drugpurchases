@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.drug.mapper.EmpMapper">
+	<!-- 分页插件查询  List<Emp> findAll(); 两表连查-->
+     <select id="findAll" resultType="com.drug.po.Person" resultMap="resuldept">
+		select * from drug_user where user_id=user_id
+	</select>
+    <resultMap type="com.drug.po.Person" id="resuldept">
+        <id property="perid" column="user_id"/>
+		<result property="perpassword" column="user_password"/>
+		<result property="pername" column="user_name"/>
+		<result property="perphon" column="user_phone"/>
+		<result property="peraddr" column="user_site"/>
+		<result property="pertype" column="user_type"/>
+    </resultMap>
+
+    
+
+</mapper>

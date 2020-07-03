@@ -206,22 +206,22 @@
                         </div>
                     </li>
                     <li>
-                        <a href="admin.jsp">
+                        <a href="toadmin">
                             <i class="fa fa-edit fa-fw"></i> 人员管理
                         </a>
                     </li>
                     <li>
-                        <a href="adminmed.jsp">
+                        <a href="toadmin1">
                             <i class="fa fa-dashboard fa-fw"></i> 药品管理
                         </a>
                     </li>
                     <li>
-                        <a href="adminpo.jsp">
+                        <a href="toadmin2">
                             <i class="fa fa-dashboard fa-fw"></i> 采购管理
                         </a>
                     </li>
                     <li>
-                    	<a href="adminsales.jsp">
+                    	<a href="admin3">
                             <i class="fa fa-dashboard fa-fw"></i> 退货管理
                         </a>
                 	</li>
